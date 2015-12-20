@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+/**
+ * Pull an RSS feed and turn into posts to be displayed.
+ */
+
+var url = require('url');
+var FeedParser = require('feedparser');
+var request = require('request');
+var sanitize = require('sanitize-html');
+var truncate = require('truncate');
+
+var req = request('http://american-alchemist.com/feed?p=1');
+var feedparser = new FeedParser();
+
+// Request:
+req.on('error', function (err) {
+  console.error(err);
+});
+req.on('response', function () {
+  this.pipe(feedparser);
+});
+
+// Feed:
+feedparser.on('error', function (err) {
+  console.error(err);
+});
+feedparser.on('readable', function () {
+  var item;
+  while (item = this.read()) {
+    var image = url.parse(item.image.url);
+    var description = sanitize(item.description, { allowedTags: [] }).trim();
+    var post = {
+      title: item.title,
+      description: truncate(description, 100),
+      link:  item.link,
+      image: image.protocol + '//' + image.host + image.pathname + '?w=400'
+    };
+    console.log(post);
+  }
+});
