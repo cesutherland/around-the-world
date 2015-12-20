@@ -24,8 +24,8 @@ req.on('response', function () {
 feedparser.on('error', function (err) {
   console.error(err);
 });
+var posts = [];
 feedparser.on('readable', function () {
-  var posts = [];
   var item;
   while (item = this.read()) {
     var image = url.parse(item.image.url);
@@ -35,9 +35,13 @@ feedparser.on('readable', function () {
       description:  truncate(description, 100),
       link:         item.link,
       date:         item.date,
-      image:        image.protocol + '//' + image.host + image.pathname + '?w=400'
+      image:        image.protocol + '//' + image.host + image.pathname + '?w=400',
+      longitude:    "",
+      latitude:     ""
     };
     posts.push(post);
   }
+});
+feedparser.on('end', function () {
   console.log(JSON.stringify(posts, null, '  '));
 });
