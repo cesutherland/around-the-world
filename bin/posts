@@ -25,16 +25,19 @@ feedparser.on('error', function (err) {
   console.error(err);
 });
 feedparser.on('readable', function () {
+  var posts = [];
   var item;
   while (item = this.read()) {
     var image = url.parse(item.image.url);
     var description = sanitize(item.description, { allowedTags: [] }).trim();
     var post = {
-      title: item.title,
-      description: truncate(description, 100),
-      link:  item.link,
-      image: image.protocol + '//' + image.host + image.pathname + '?w=400'
+      title:        item.title,
+      description:  truncate(description, 100),
+      link:         item.link,
+      date:         item.date,
+      image:        image.protocol + '//' + image.host + image.pathname + '?w=400'
     };
-    console.log(post);
+    posts.push(post);
   }
+  console.log(JSON.stringify(posts, null, '  '));
 });
