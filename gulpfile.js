@@ -9,11 +9,13 @@ var config = {
       port: 30520
     }
   },
-  assets: {
-    '': [
-      './node_modules/leaflet/dist/leaflet.css',
-      './app/index.css'
-    ]
+  less: {
+    'index.css': {
+      paths: [
+        './node_modules',
+      ],
+      src: './app/index.less'
+    }
   },
   js: {
     'index.js': {

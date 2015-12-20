@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "feedparser": "^1.1.4",
     "jquery": "^2.1.4",
     "leaflet": "^0.7.7",

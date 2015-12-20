@@ -1,20 +1,12 @@
 var leaflet = require('leaflet');
 var $ = require('jquery');
 
+var markers = require('/posts.json');
+
 var map = leaflet.map('map').setView([0, 0], 2);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   attribution: 'map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
-var markers = [
-  {
-    title: 'Seattle',
-    description: 'A rainy city.',
-    image: '',
-    longitude: 47.6097,
-    latitude: -122.3331
-  }
-];
 
 var $popup = $('#popup');
 var popupTimeout = null;
@@ -29,7 +21,6 @@ function closePopup () {
     $popup.hide();
   }, 500);
 }
-
 
 for (var i = 0; i < markers.length; i++) {
   (function () {
