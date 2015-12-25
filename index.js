@@ -1,12 +1,29 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"./app/index.js":[function(require,module,exports){
+var $ = require('jquery');
+var markers = require('./posts.json');
+
+var Map = require('./LeafletMap');
+var map = new Map({
+  markers: markers
+});
+map.draw();
+
+for (var i = 0; i < markers.length; i++) {
+  $('body').append(
+    $('<img>').attr('src', markers[i].image)
+  );
+}
+
+
+
+},{"./LeafletMap":1,"./posts.json":2,"jquery":4}],1:[function(require,module,exports){
 var leaflet = require('leaflet');
 var $ = require('jquery');
-var markers = require('../posts.json');
+var popup = require('./templates/popup.tpl');
 
-var map = leaflet.map('map').setView([0, 0], 2);
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  attribution: 'map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+var ratio = window.devicePixelRatio;
+var radius = 7;
+var weight = 2.5;
 
 var $popup = $('#popup');
 var popupTimeout = null;
@@ -22,47 +39,267 @@ function closePopup () {
   }, 500);
 }
 
-for (var i = 0; i < markers.length; i++) {
-  (function () {
-    var marker = markers[i];
-    var radius = 6;
-    var circle = L.circleMarker([marker.longitude, marker.latitude], {
-      color: '#000',
-      fill: true,
-      fillOpacity: 0,
-      radius: radius,
-      opacity: 0.8
-    })
-    .addTo(map)
-    .on('mouseover', function (e) {
-      var originalEvent = e.originalEvent;
-      var $target = $(originalEvent.target);
+function openPopup (target, marker) {
+  var $target = $(target);
 
-      clearTimeout(popupTimeout);
+  clearTimeout(popupTimeout);
 
-      // Template:
-      $popup.find('.popup-content').html(
-        (marker.link ?
-          '<h4><a href="'+marker.link+'">'+marker.title+'</a></h4>' :
-          '<h4>'+marker.title+'</h4>'
-        ) +
-        (marker.image ? '<div class="popup-image" style="background-image: url(\'' + marker.image+ '\')"/>' : '') +
-        '<p>'+marker.description+'</p>'
-      );
+  // Template:
+  $popup.find('.popup-content').html(popup(marker));
 
-      // Show:
-      var offset = $target.offset();
-      $popup.show().css({
-        position: 'absolute',
-        left: offset.left- $popup.outerWidth() / 2,
-        top: offset.top + radius * 2 + 4
-      })
-    })
-    .on('mouseout', closePopup);
-  })();
+  // Show:
+  var offset = $target.offset();
+  var width = $popup.outerWidth(true)
+  var maxWidth = $(window).outerWidth(true);
+  if ((offset.left - width/2) < 12) {
+    var offscreen = true;
+    var offscreenOffset = (offset.left - width/2);
+    offscreenOffset = Math.max(offscreenOffset, -width/2 + 12);
+  } else
+  if ((offset.left + width/2) > maxWidth) {
+    var offscreen = true;
+    var offscreenOffset = (offset.left + width/2) - maxWidth;
+  }
+  $popup.show().css({
+    position: 'absolute',
+    left: offset.left + radius - width / 2 - (offscreen ? offscreenOffset : 0),
+    top: offset.top + radius * 2 + 5
+  });
+  $popup.find('.popup-arrow').css({
+    left: offscreen ? width/2 + offscreenOffset : width / 2
+  });
 }
 
-},{"../posts.json":3,"jquery":1,"leaflet":2}],1:[function(require,module,exports){
+function LeafletMap (options) {
+  this.markers = options.markers;
+  return this;
+}
+
+LeafletMap.prototype.draw = function () {
+  var bounds = getBounds(this.markers);
+  var padding = 2;
+  var map = leaflet.map('map', {
+  })
+  //.setView([0, 0], 2);
+  .fitBounds([
+    [bounds.max[1] + padding, bounds.max[0] + padding],
+    [bounds.min[1] - padding, bounds.min[0] - padding]
+  ])
+  //.setZoom(2);
+
+
+  var url = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  L.tileLayer(url, {
+    attribution: 'map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  this.map = map;
+  this._drawMarkers();
+}; 
+
+LeafletMap.prototype._drawMarkers = function () {
+  var markers = this.markers;
+  var map = this.map;
+  map.on('click', closePopup);
+  $('#map').on('touchstart', closePopup);
+  for (var i = 0; i < markers.length; i++) {
+    (function () {
+      var marker = markers[i];
+      var circle = L.circleMarker([marker.latitude, marker.longitude], {
+        color: '#000',
+        fill: true,
+        fillOpacity: 0,
+        weight: weight,
+        radius: radius,
+        opacity: 0.8,
+        className: 'marker'
+      }).addTo(map)
+        .on('mouseover', myOpenPopup)
+        .on('click', myOpenPopup)
+        .on('mouseout', closePopup);
+
+      function myOpenPopup (e) {
+        openPopup(e.originalEvent.target, marker);
+      }
+    })();
+  }
+
+};
+
+/**
+ * Get max/min bounds of markers.
+ */
+function getBounds (markers) {
+
+  // [longitude, latitude]
+  var max = [-Number.MAX_VALUE, -Number.MAX_VALUE]
+  var min = [Number.MAX_VALUE, Number.MAX_VALUE];
+
+  for (var i = 0; i < markers.length; i++) {
+    max[0] = markers[i].longitude > max[0] ? markers[i].longitude : max[0];
+    min[0] = markers[i].longitude < min[0] ? markers[i].longitude : min[0];
+    max[1] = markers[i].latitude  > max[1] ? markers[i].latitude  : max[1];
+    min[1] = markers[i].latitude  < min[1] ? markers[i].latitude  : min[1];
+  }
+
+  return {
+    max: max,
+    min: min
+  };
+}
+
+module.exports = LeafletMap;
+
+},{"./templates/popup.tpl":3,"jquery":4,"leaflet":5}],2:[function(require,module,exports){
+module.exports=[
+  {
+    "title": "A Tour through Tokyo Via Haiku: Shibuya and Shinjuku",
+    "description": "SHIBUYA\nZebra stripes and the night\nPlay hopscotch in a crowd,\nEndlessly till dawn.\nAccording  to Tr…",
+    "link": "http://american-alchemist.com/2015/12/06/a-tour-through-tokyo-via-haiku-shibuya-and-shinjuku/",
+    "date": "2015-12-06T20:06:26.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_8396.jpg?w=400",
+    "latitude": 35.6640,
+    "longitude": 139.6982
+  },
+  {
+    "title": "A Tour through Tokyo Via Haiku: Shimokitazawa, Ginza, and Harajuku",
+    "description": "SHIMOKITAZAWA\nCool kid on the block\nStanding in vintage high tops,\nEspresso in hand.\nWe arrived in S…",
+    "link": "http://american-alchemist.com/2015/11/27/a-tour-through-tokyo-via-haiku-shimokitazawa-ginza-and-harajuku/",
+    "date": "2015-11-27T19:54:19.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/img_36051.jpg?w=400",
+    "latitude": 35.661606,
+    "longitude": 139.666561
+  },
+  {
+    "title": "A Tour Through Tokyo Via Haiku: The Metro, The Fish Market, and the Gardens",
+    "description": "TOKYO METRO\nA polite hussle\nMoving in silent masses\nTrain calls cut the air.\nThere’s a weekday unifo…",
+    "link": "http://american-alchemist.com/2015/11/23/a-tour-through-tokyo-via-haiku-the-metro-the-fish-market-and-the-gardens-2/",
+    "date": "2015-11-23T22:34:46.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_7635.jpg?w=400",
+    "latitude": 35.661389,
+    "longitude": 139.769722
+  },
+  {
+    "title": "An Afternoon Abroad with a Poor Choice of Footware",
+    "description": "Bubblegum is holding my shoe together.  The black perforated flats I packed have proven to be a bad …",
+    "link": "http://american-alchemist.com/2015/10/20/an-afternoon-abroad-with-a-poor-choice-of-footware/",
+    "date": "2015-10-20T20:35:21.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/10/dsc_7922.jpg?w=400",
+    "latitude": 35.011667,
+    "longitude": 135.768333
+  },
+  {
+    "title": "The Old Heart of San Francisco",
+    "description": "The fog in San Francisco is named Karl.  Karl has his own Twitter account and LinkedIn profile.  He’…",
+    "link": "http://american-alchemist.com/2015/08/19/the-old-heart-of-san-francisco/",
+    "date": "2015-08-19T04:59:49.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/img_1815.jpg?w=400",
+    "latitude": 37.783333,
+    "longitude": -122.416667
+  },
+  {
+    "title": "Block Party in Seattle",
+    "description": "Petrichor is a word constructed from the Greek “petra”, meaning stone, and “ichor”, the fluid that f…",
+    "link": "http://american-alchemist.com/2015/07/26/block-party-in-seattle/",
+    "date": "2015-07-26T20:11:22.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_6724.jpg?w=400",
+    "latitude": 47.622942,
+    "longitude": -122.316456
+  },
+  {
+    "title": "Seven Wonders of Oregon Part II: The Columbia River Gorge",
+    "description": "Think of a town living in the hall of a mountain king.  Where in it’s shadow people spend their days…",
+    "link": "http://american-alchemist.com/2015/07/16/seven-wonders-of-oregon-part-ii-the-columbia-river-gorge/",
+    "date": "2015-07-16T16:21:36.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_5972.jpg?w=400",
+    "latitude": 45.704722,
+    "longitude": -121.791667
+  },
+  {
+    "title": "Honky-Tonk Town in Nashville",
+    "description": "Honky Tonks are the main attraction.  Men play cellos as they trill their tongue to twanging strings…",
+    "link": "http://american-alchemist.com/2015/07/01/honky-tonk-town-in-nashville/",
+    "date": "2015-07-01T16:54:26.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4307.jpg?w=400",
+    "latitude": 36.166667,
+    "longitude": -86.783333
+  },
+  {
+    "title": "National Monument: Bandelier",
+    "description": "A grandmotherly woman in the ranger station traced routes on our maps with a red pen, writing in sma…",
+    "link": "http://american-alchemist.com/2015/05/31/national-monument-bandelier/",
+    "date": "2015-05-31T21:20:29.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/05/bandelier-circle.jpg?w=400",
+    "latitude": 35.778889,
+    "longitude": -106.321111
+  },
+  {
+    "title": "Roadtrippin’ in California",
+    "description": "Driving to California has been a dream of mine since the tween years.  After graduation my friends a…",
+    "link": "http://american-alchemist.com/2015/05/17/roadtrippin-in-california/",
+    "date": "2015-05-17T20:20:49.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/05/dsc_5375-e1432417201465.jpg?w=400",
+    "latitude": 37,
+    "longitude": -120
+  },
+  {
+    "title": "Tango In Buenos Aires",
+    "description": "Lightning blazes in windows but no one looks.  No one even speaks.  Tables across the room are cover…",
+    "link": "http://american-alchemist.com/2015/04/25/tango-in-buenos-aires/",
+    "date": "2015-04-25T21:14:21.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3513-e1432417888217.jpg?w=400",
+    "latitude": -34.603333,
+    "longitude": -58.381667
+  },
+  {
+    "title": "A Non-Definitive Guide to NYC",
+    "description": "Landmarks give shape to a city but they don’t define it.  The Eiffel Tower.  The Colosseum.  Big Ben…",
+    "link": "http://american-alchemist.com/2015/03/16/a-non-definitive-guide-to-nyc/",
+    "date": "2015-03-16T00:15:37.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3461-e1432418025773.jpg?w=400",
+    "latitude": 40.7127,
+    "longitude": -74.0059
+  },
+  {
+    "title": "Seven Wonders of Oregon: The Painted Hills",
+    "description": "Turquoise tulle rises and falls, rises and falls, a confection in motion and a dream among the hills…",
+    "link": "http://american-alchemist.com/2015/01/13/seven-wonders-of-oregon-the-painted-hills/",
+    "date": "2015-01-13T21:27:23.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_8603-e1432419234648.jpg?w=400",
+    "latitude": 44.661522,
+    "longitude": -120.273073
+  },
+  {
+    "title": "National Park: Mount Rainier",
+    "description": "Malcolm Middleton is singing about a box and a knife in arguably one of the most depressing songs I’…",
+    "link": "http://american-alchemist.com/2015/01/02/national-park-mount-rainier/",
+    "date": "2015-01-02T18:20:09.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_9748.jpg?w=400",
+    "latitude": 46.85,
+    "longitude": -121.75
+  },
+  {
+    "title": "Pit Stop: Cadillac Ranch",
+    "description": "Most just shout names.  Ben, Donna, Jake.  Shirley Sux says another.  FMHS Class of 1977, Laredo, Mo…",
+    "link": "http://american-alchemist.com/2014/12/06/pit-stop-cadillac-ranch/",
+    "date": "2014-12-06T02:06:21.000Z",
+    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4442-e1432419216757.jpg?w=400",
+    "latitude": 35.187221,
+    "longitude": -101.987041
+  }
+]
+
+
+},{}],3:[function(require,module,exports){
+module.exports = function (marker) {
+  return (marker.link ?
+      '<h4><a href="'+marker.link+'">'+marker.title+'</a></h4>' :
+      '<h4>'+marker.title+'</h4>'
+    ) +
+    (marker.image ? '<div class="popup-image" style="background-image: url(\'' + marker.image+ '\')"/>' : '') +
+    '<p>'+marker.description+'</p>';
+};
+
+},{}],4:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -9274,7 +9511,7 @@ return jQuery;
 
 }));
 
-},{}],2:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /*
  Leaflet, a JavaScript library for mobile-friendly interactive maps. http://leafletjs.com
  (c) 2010-2013, Vladimir Agafonkin
@@ -18443,145 +18680,6 @@ L.Map.include({
 
 
 }(window, document));
-},{}],3:[function(require,module,exports){
-module.exports=[
-  {
-    "title": "A Tour through Tokyo Via Haiku: Shibuya and Shinjuku",
-    "description": "SHIBUYA\nZebra stripes and the night\nPlay hopscotch in a crowd,\nEndlessly till dawn.\nAccording  to Tr…",
-    "link": "http://american-alchemist.com/2015/12/06/a-tour-through-tokyo-via-haiku-shibuya-and-shinjuku/",
-    "date": "2015-12-06T20:06:26.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_8396.jpg?w=400",
-    "longitude": "35.6640",
-    "latitude": "139.6982"
-  },
-  {
-    "title": "A Tour through Tokyo Via Haiku: Shimokitazawa, Ginza, and Harajuku",
-    "description": "SHIMOKITAZAWA\nCool kid on the block\nStanding in vintage high tops,\nEspresso in hand.\nWe arrived in S…",
-    "link": "http://american-alchemist.com/2015/11/27/a-tour-through-tokyo-via-haiku-shimokitazawa-ginza-and-harajuku/",
-    "date": "2015-11-27T19:54:19.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/img_36051.jpg?w=400",
-    "longitude": "35.661606",
-    "latitude": "139.666561"
-  },
-  {
-    "title": "A Tour Through Tokyo Via Haiku: The Metro, The Fish Market, and the Gardens",
-    "description": "TOKYO METRO\nA polite hussle\nMoving in silent masses\nTrain calls cut the air.\nThere’s a weekday unifo…",
-    "link": "http://american-alchemist.com/2015/11/23/a-tour-through-tokyo-via-haiku-the-metro-the-fish-market-and-the-gardens-2/",
-    "date": "2015-11-23T22:34:46.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_7635.jpg?w=400",
-    "longitude": "35.661389",
-    "latitude": "139.769722"
-  },
-  {
-    "title": "An Afternoon Abroad with a Poor Choice of Footware",
-    "description": "Bubblegum is holding my shoe together.  The black perforated flats I packed have proven to be a bad …",
-    "link": "http://american-alchemist.com/2015/10/20/an-afternoon-abroad-with-a-poor-choice-of-footware/",
-    "date": "2015-10-20T20:35:21.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/10/dsc_7922.jpg?w=400",
-    "longitude": "35.011667",
-    "latitude": "135.768333"
-  },
-  {
-    "title": "The Old Heart of San Francisco",
-    "description": "The fog in San Francisco is named Karl.  Karl has his own Twitter account and LinkedIn profile.  He’…",
-    "link": "http://american-alchemist.com/2015/08/19/the-old-heart-of-san-francisco/",
-    "date": "2015-08-19T04:59:49.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/img_1815.jpg?w=400",
-    "longitude": "37.783333",
-    "latitude": "-122.416667"
-  },
-  {
-    "title": "Block Party in Seattle",
-    "description": "Petrichor is a word constructed from the Greek “petra”, meaning stone, and “ichor”, the fluid that f…",
-    "link": "http://american-alchemist.com/2015/07/26/block-party-in-seattle/",
-    "date": "2015-07-26T20:11:22.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_6724.jpg?w=400",
-    "longitude": "47.622942",
-    "latitude": "-122.316456"
-  },
-  {
-    "title": "Seven Wonders of Oregon Part II: The Columbia River Gorge",
-    "description": "Think of a town living in the hall of a mountain king.  Where in it’s shadow people spend their days…",
-    "link": "http://american-alchemist.com/2015/07/16/seven-wonders-of-oregon-part-ii-the-columbia-river-gorge/",
-    "date": "2015-07-16T16:21:36.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_5972.jpg?w=400",
-    "longitude": "45.704722",
-    "latitude": "-121.791667"
-  },
-  {
-    "title": "Honky-Tonk Town in Nashville",
-    "description": "Honky Tonks are the main attraction.  Men play cellos as they trill their tongue to twanging strings…",
-    "link": "http://american-alchemist.com/2015/07/01/honky-tonk-town-in-nashville/",
-    "date": "2015-07-01T16:54:26.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4307.jpg?w=400",
-    "longitude": "36.166667",
-    "latitude": "-86.783333"
-  },
-  {
-    "title": "National Monument: Bandelier",
-    "description": "A grandmotherly woman in the ranger station traced routes on our maps with a red pen, writing in sma…",
-    "link": "http://american-alchemist.com/2015/05/31/national-monument-bandelier/",
-    "date": "2015-05-31T21:20:29.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/05/bandelier-circle.jpg?w=400",
-    "longitude": "35.778889",
-    "latitude": "-106.321111"
-  },
-  {
-    "title": "Roadtrippin’ in California",
-    "description": "Driving to California has been a dream of mine since the tween years.  After graduation my friends a…",
-    "link": "http://american-alchemist.com/2015/05/17/roadtrippin-in-california/",
-    "date": "2015-05-17T20:20:49.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/05/dsc_5375-e1432417201465.jpg?w=400",
-    "longitude": "37",
-    "latitude": "-120"
-  },
-  {
-    "title": "Tango In Buenos Aires",
-    "description": "Lightning blazes in windows but no one looks.  No one even speaks.  Tables across the room are cover…",
-    "link": "http://american-alchemist.com/2015/04/25/tango-in-buenos-aires/",
-    "date": "2015-04-25T21:14:21.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3513-e1432417888217.jpg?w=400",
-    "longitude": "-34.603333",
-    "latitude": "-58.381667"
-  },
-  {
-    "title": "A Non-Definitive Guide to NYC",
-    "description": "Landmarks give shape to a city but they don’t define it.  The Eiffel Tower.  The Colosseum.  Big Ben…",
-    "link": "http://american-alchemist.com/2015/03/16/a-non-definitive-guide-to-nyc/",
-    "date": "2015-03-16T00:15:37.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3461-e1432418025773.jpg?w=400",
-    "longitude": "40.7127",
-    "latitude": "-74.0059"
-  },
-  {
-    "title": "Seven Wonders of Oregon: The Painted Hills",
-    "description": "Turquoise tulle rises and falls, rises and falls, a confection in motion and a dream among the hills…",
-    "link": "http://american-alchemist.com/2015/01/13/seven-wonders-of-oregon-the-painted-hills/",
-    "date": "2015-01-13T21:27:23.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_8603-e1432419234648.jpg?w=400",
-    "longitude": "44.661522",
-    "latitude": "-120.273073"
-  },
-  {
-    "title": "National Park: Mount Rainier",
-    "description": "Malcolm Middleton is singing about a box and a knife in arguably one of the most depressing songs I’…",
-    "link": "http://american-alchemist.com/2015/01/02/national-park-mount-rainier/",
-    "date": "2015-01-02T18:20:09.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_9748.jpg?w=400",
-    "longitude": "46.85",
-    "latitude": "-121.75"
-  },
-  {
-    "title": "Pit Stop: Cadillac Ranch",
-    "description": "Most just shout names.  Ben, Donna, Jake.  Shirley Sux says another.  FMHS Class of 1977, Laredo, Mo…",
-    "link": "http://american-alchemist.com/2014/12/06/pit-stop-cadillac-ranch/",
-    "date": "2014-12-06T02:06:21.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4442-e1432419216757.jpg?w=400",
-    "longitude": "35.187221",
-    "latitude": "-101.987041"
-  }
-]
-
 },{}]},{},["./app/index.js"])
 
 
