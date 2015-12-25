@@ -2,38 +2,77 @@
 @import 'bootstrap/less/normalize';
 @import 'bootstrap/less/print';
 
+@map-land-color: #f1eee8;
+@map-water-color: #b5d0d0;
+@map-accent-color: #b257b1;
+// #cd98c8;
+@map-marker-fill: @map-land-color;
+@map-marker-color: @map-accent-color;
+
 .map {
   height: 100%;
-  background: #ffffff;
-}
-.popup {
-  background: #fff;
-  border-radius: 3px;
-  width: 240px;
-  padding: 4px 12px;
-  position: relative;
-}
-.popup-content {
-}
-.popup-image {
-  height: 80px;
-  width: 80px;
-  margin: 0px 12px;
-  border-radius: 40px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  float: right;
-}
-.popup-arrow {
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  margin-left: -1px;
-  width: 0; 
-  height: 0; 
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid white;
+  background: @map-water-color;
+  .country {
+    @country-color: #90C3D4;
+    fill: @country-color;
+    stroke: @country-color;
+  }
+  .marker {
+    fill: @map-marker-fill;
+    fill-opacity: 1;
+    stroke: @map-marker-color;
+  }
 }
 
+.popup {
+  @popup-color: #fff;
+  background: @popup-color;
+  display: none;
+  border-radius: 3px;
+  width: 280px;
+  padding: 12px 14px 12px 16px;
+  position: relative;
+  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.6);
+  h4 {
+    margin: 0px 0px 8px 0px;
+    font-size: 16px;
+    text-align: center;
+  }
+  a, a:visited {
+    color: #222;
+  }
+  .popup-content {
+    overflow: hidden;
+    font-size: 14px;
+    white-space: pre-wrap;
+    p {
+      padding-top: 10px;
+    }
+  }
+  .popup-image {
+    @image-size: 90px;
+    height: @image-size;
+    width: @image-size;
+    margin-left: 12px;
+    margin-top: 4px;
+    border: 1px solid #eee;
+    border-radius: @image-size/2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    float: right;
+  }
+  .popup-arrow {
+    @arrow-size: 8px;
+    @arrow-color: @popup-color;
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    margin-left: -@arrow-size;
+    width: 0; 
+    height: 0; 
+    border-left: @arrow-size solid transparent;
+    border-right: @arrow-size solid transparent;
+    border-bottom: @arrow-size solid @arrow-color;
+  }
+}
