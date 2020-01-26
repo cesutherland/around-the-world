@@ -30,14 +30,17 @@ feedparser.on('readable', function () {
   while (item = this.read()) {
     var image = url.parse(item.image.url);
     var description = sanitize(item.description, { allowedTags: [] }).trim();
+    var longitude = item['geo:long'];
+    var latitude = item['geo:lat'];
+    if (!longitude || !latitude) console.error(`Missing long-lat: ${item.title} ${item.link}`);
     var post = {
       title:        item.title,
       description:  truncate(description, 100),
       link:         item.link,
       date:         item.date,
       image:        image.protocol + '//' + image.host + image.pathname + '?w=400',
-      longitude:    "",
-      latitude:     ""
+      longitude:    longitude && longitude['#'],
+      latitude:     latitude && latitude['#']
     };
     posts.push(post);
   }
