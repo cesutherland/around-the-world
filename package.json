@@ -4,6 +4,8 @@
   "description": "Put stuff on a world map as a library.",
   "main": "index.js",
   "scripts": {
+    "build": "gulp compile",
+    "watch": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
