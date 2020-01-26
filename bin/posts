@@ -32,7 +32,10 @@ feedparser.on('readable', function () {
     var description = sanitize(item.description, { allowedTags: [] }).trim();
     var longitude = item['geo:long'];
     var latitude = item['geo:lat'];
-    if (!longitude || !latitude) console.error(`Missing long-lat: ${item.title} ${item.link}`);
+    if (!longitude || !latitude) {
+      console.error(`Missing long-lat: ${item.title} ${item.link}`);
+      continue;
+    }
     var post = {
       title:        item.title,
       description:  truncate(description, 100),
