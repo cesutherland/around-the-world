@@ -63,8 +63,8 @@ LeafletMap.prototype.draw = function () {
   })
   //.setView([0, 0], 2);
   .fitBounds([
-    [bounds.max[1] + padding, bounds.max[0] + padding],
-    [bounds.min[1] - padding, bounds.min[0] - padding]
+    [Math.min(bounds.max[0] + padding, 90),  Math.min(bounds.max[1] + padding, 180)],
+    [Math.max(bounds.min[0] - padding, -90), Math.max(bounds.min[1] - padding, -180)],
   ])
   //.setZoom(2);
 
@@ -116,10 +116,10 @@ function getBounds (markers) {
   var min = [Number.MAX_VALUE, Number.MAX_VALUE];
 
   for (var i = 0; i < markers.length; i++) {
-    max[0] = markers[i].longitude > max[0] ? markers[i].longitude : max[0];
-    min[0] = markers[i].longitude < min[0] ? markers[i].longitude : min[0];
-    max[1] = markers[i].latitude  > max[1] ? markers[i].latitude  : max[1];
-    min[1] = markers[i].latitude  < min[1] ? markers[i].latitude  : min[1];
+    max[0] = Math.max(max[0], markers[i].latitude);
+    max[1] = Math.max(max[1], markers[i].longitude);
+    min[0] = Math.min(min[0], markers[i].latitude);
+    min[1] = Math.min(min[1], markers[i].longitude);
   }
 
   return {
