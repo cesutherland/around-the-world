@@ -43,7 +43,7 @@ feedparser.on('readable', function () {
       description:  truncate(description, 100),
       link:         item.link,
       date:         item.date,
-      image:        image.protocol + '//' + image.host + image.pathname + '?w=400',
+      image:        image.protocol + '//' + image.host + image.pathname + '?w=800',
       longitude:    longitude && longitude['#'],
       latitude:     latitude && latitude['#']
     };

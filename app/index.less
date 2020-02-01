@@ -25,10 +25,11 @@
 }
 
 .images {
-  @grid-padding: 0.7rem;
+  @grid-image-width: 800px;
+  @grid-padding: 12px;
   column-count: 3;
   column-gap: @grid-padding;
-  max-width: 1920px;
+  max-width: 3*@grid-image-width + 4*@grid-padding;
   min-height: 100%;
   margin: 0px auto;
   padding: @grid-padding;
