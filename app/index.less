@@ -24,6 +24,27 @@
   }
 }
 
+.images {
+  @grid-padding: 0.7rem;
+  column-count: 3;
+  column-gap: @grid-padding;
+  max-width: 1920px;
+  margin: 0px auto;
+  padding: @grid-padding;
+  img {
+    flex-grow: 1;
+    padding-bottom: @grid-padding;
+    width: 100%;
+    display: block;
+  }
+  @media (max-width: 1200px) {
+    column-count: 2;
+  }
+  @media (max-width: 800px) {
+    column-count: 1;
+  }
+}
+
 .popup {
   @popup-color: #fff;
   background: @popup-color;
