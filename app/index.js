@@ -6,11 +6,9 @@ var Map = require('./LeafletMap');
 var map = new Map({
   markers: markers
 });
-map.draw();
 
 // Images:
-var $img = $('<div class="images"></div>"');
-$('body').append($img);
+var $img = $('#gallery');
 for (var i = 0; i < markers.length; i++) {
   var marker = markers[i];
   $img.append($(
@@ -20,4 +18,13 @@ for (var i = 0; i < markers.length; i++) {
   ));
 }
 
-
+// Initialization:
+if (window.location.hash === '#gallery') {
+  setTimeout(function () {
+    $img.scrollTop();
+    $img[0].scrollIntoView();
+    map.draw();
+  }, 100);
+} else {
+  map.draw();
+}
