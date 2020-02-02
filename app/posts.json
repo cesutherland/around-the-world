@@ -1,201 +1,632 @@
 [
   {
+    "title": "Eloping in Joshua Tree: A Desert Love Story",
+    "description": "Make no mistake, it gets cold in the desert. The wind kicks up just before sunset on a late-May even…",
+    "link": "https://american-alchemist.com/2020/01/16/eloping-in-joshua-tree-a-desert-love-story/",
+    "date": "2020-01-16T18:18:50.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2020/01/2019_05-21_sutherland_wedding_00896-1.jpg?w=800",
+    "longitude": "-115.900992",
+    "latitude": "33.873415"
+  },
+  {
+    "title": "The Art of Natura Obscura",
+    "description": "My husband has a habit. Most often it kicks in during a hike, but it has been known to occur in citi…",
+    "link": "https://american-alchemist.com/2019/11/24/the-art-of-natura-obscura/",
+    "date": "2019-11-24T15:24:52.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/11/dsc_3336.jpg?w=800",
+    "longitude": "-121.315310",
+    "latitude": "44.058173"
+  },
+  {
+    "title": "The West Virginia Town Defying Stereotypes",
+    "description": "The fiddler breaks a string mid-song. The band being an instrumental trio, the change is noticeable …",
+    "link": "https://american-alchemist.com/2019/11/21/the-west-virginia-town-defying-stereotypes/",
+    "date": "2019-11-21T22:34:03.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/11/dsc_0226.jpg?w=800",
+    "longitude": "-79.498109",
+    "latitude": "39.148997"
+  },
+  {
+    "title": "An Illustrated Food Guide to Sweden",
+    "description": "I’ve always had a desire to visit Scandinavia, but I admit that prior to actually visiting Stockholm…",
+    "link": "https://american-alchemist.com/2019/10/13/an-illustrated-food-guide-to-sweden/",
+    "date": "2019-10-13T16:51:50.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/10/bulles-10.jpg?w=800",
+    "longitude": "18.068581",
+    "latitude": "59.329324"
+  },
+  {
+    "title": "Patti B and Mesa V(erde)",
+    "description": "Breakfast in the morning was mint chocolate chip donuts, procured from Sedona Arizona’s eponymous “S…",
+    "link": "https://american-alchemist.com/2019/08/25/patti-b-and-mesa-verde/",
+    "date": "2019-08-25T13:03:41.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/08/dsc_5343.jpg?w=800",
+    "longitude": "-108.461833",
+    "latitude": "37.230873"
+  },
+  {
+    "title": "Petrified Forest: The Little National Park that Could",
+    "description": "National Parks of the US give their visitors a park map and newsletter as they enter. The contents u…",
+    "link": "https://american-alchemist.com/2019/07/28/petrified-forest-the-little-national-park-that-could/",
+    "date": "2019-07-28T14:44:23.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/07/dsc_0872.jpg?w=800",
+    "longitude": "-109.806792",
+    "latitude": "34.909990"
+  },
+  {
+    "title": "My 5 Favorite Beer Gardens of Berlin and Munich",
+    "description": "The beer scene in the US is stellar. It’s the trendsetter (Hello hazy IPA). The country dwarfs all o…",
+    "link": "https://american-alchemist.com/2019/06/30/my-5-favorite-beer-gardens-of-berlin-and-munich/",
+    "date": "2019-06-30T15:07:23.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/06/img_1214.jpg?w=800",
+    "longitude": "11.581981",
+    "latitude": "48.135125"
+  },
+  {
+    "title": "To Be Young In Berlin",
+    "description": "There are places I look forward to travelling to as I age —  In New Mexico and Arizona I’ll collect …",
+    "link": "https://american-alchemist.com/2019/06/09/to-be-young-in-berlin/",
+    "date": "2019-06-09T13:35:14.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/06/img_1283.jpg?w=800",
+    "longitude": "13.404954",
+    "latitude": "52.520007"
+  },
+  {
+    "title": "East of Naples, a Home",
+    "description": "At 5am I am woken by the donkey. I knew donkeys brayed, but didn’t realize that like roosters,  they…",
+    "link": "https://american-alchemist.com/2019/04/16/east-of-naples-a-home/",
+    "date": "2019-04-16T22:54:15.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/04/dsc_8614.jpg?w=800",
+    "longitude": "14.819760",
+    "latitude": "41.010366"
+  },
+  {
+    "title": "The City Beneath the Volcano",
+    "description": "We take the morning train from Rome to Pompeii, switching trains in Naples. Carl has warned me about…",
+    "link": "https://american-alchemist.com/2019/03/09/the-city-beneath-the-volcano/",
+    "date": "2019-03-09T17:44:39.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/03/dsc_8602.jpg?w=800",
+    "longitude": "14.268120",
+    "latitude": "40.851798"
+  },
+  {
+    "title": "The Floating City",
+    "description": "Whenever I hear people speak of Venice, it’s to say one of three things: \n\n“That’s number one on my …",
+    "link": "https://american-alchemist.com/2019/02/10/the-floating-city/",
+    "date": "2019-02-10T16:50:28.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/02/dsc_7839.jpg?w=800",
+    "longitude": "12.315515",
+    "latitude": "45.440847"
+  },
+  {
+    "title": "A Tale of Two Duomos",
+    "description": "When I think of Italy there are two Italy’s that come to mind: One is the whirlwind of Rome and Mila…",
+    "link": "https://american-alchemist.com/2019/01/12/a-tale-of-two-duomos/",
+    "date": "2019-01-12T16:28:43.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2019/01/dsc_8103.jpg?w=800",
+    "longitude": "11.330757",
+    "latitude": "43.318809"
+  },
+  {
+    "title": "South Dakota Isn’t Boring",
+    "description": "When the buffalo came to camp I texted my mother — It was one of those “just in case” reactions wher…",
+    "link": "https://american-alchemist.com/2018/12/01/south-dakota-isnt-boring/",
+    "date": "2018-12-01T17:32:03.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/12/dsc_5759.jpg?w=800",
+    "longitude": "-102.339691",
+    "latitude": "43.855380"
+  },
+  {
+    "title": "An Illustrated Style Guide to NYC",
+    "description": "One winter morning in Greenwich Village I sat in an oatmeal cafe (because of course that’s a thing) …",
+    "link": "https://american-alchemist.com/2018/10/27/an-illustrated-style-guide-to-nyc/",
+    "date": "2018-10-27T15:01:58.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/10/featuredimage.jpg?w=800",
+    "longitude": "-74.005973",
+    "latitude": "40.712775"
+  },
+  {
+    "title": "Utah’s National Parks Ranked (Somewhat Arbitrarily)",
+    "description": "Let’s get something straight before we dive into this — my “ranking” of parks stems from my being so…",
+    "link": "https://american-alchemist.com/2018/09/27/utahs-national-parks-ranked-somewhat-arbitrarily/",
+    "date": "2018-09-27T21:52:23.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/09/dsc_1285.jpg?w=800",
+    "longitude": "-113.026301",
+    "latitude": "37.298202"
+  },
+  {
+    "title": "The Colors of San Juan",
+    "description": "At 5:00pm we pass a parrot bar. The door is made of the heaviest wood but it’s wide open. Revealed w…",
+    "link": "https://american-alchemist.com/2018/09/06/the-colors-of-san-juan/",
+    "date": "2018-09-06T18:12:33.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/09/dsc_3916.jpg?w=800",
+    "longitude": "-66.105735",
+    "latitude": "18.465539"
+  },
+  {
+    "title": "Hanging in a Bavarian Fairytale: Rothenburg ob der Tauber",
+    "description": "Rothenburg is the town the live action Beauty &amp; the Beast set is inspired by (they made a replic…",
+    "link": "https://american-alchemist.com/2018/08/23/hanging-in-a-bavarian-fairytale-rothenburg-ob-der-tauber/",
+    "date": "2018-08-23T18:28:47.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/08/dsc_7570.jpg?w=800",
+    "longitude": "10.186739",
+    "latitude": "49.380183"
+  },
+  {
+    "title": "Hanging in a Bavarian Fairytale: Bamberg",
+    "description": "I know Beauty and the Beast takes place in France, but I couldn’t get the soundtrack out of my head …",
+    "link": "https://american-alchemist.com/2018/08/19/hanging-in-a-bavarian-fairytale-bamberg/",
+    "date": "2018-08-19T15:38:37.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/08/dsc_7219.jpg?w=800",
+    "longitude": "10.902764",
+    "latitude": "49.898814"
+  },
+  {
+    "title": "All the Cool Kids Are in Stockholm",
+    "description": "We touch down in the rain.  It’s early October and 40 degrees in Stockholm.  Cold, rainy and windy. …",
+    "link": "https://american-alchemist.com/2018/07/22/all-the-cool-kids-are-in-stockholm/",
+    "date": "2018-07-22T18:21:07.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/07/dsc_6024-2.jpg?w=800",
+    "longitude": "18.061619",
+    "latitude": "59.312527"
+  },
+  {
+    "title": "The Earth is Flat! Bonneville Salt Flats and the Land of Pure Horizon",
+    "description": "There is a place so flat and so barren that land speed records are shattered on its grounds; where y…",
+    "link": "https://american-alchemist.com/2018/05/05/the-earth-is-flat-bonneville-salt-flats-and-the-land-of-pure-horizon/",
+    "date": "2018-05-05T16:10:26.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/05/dsc_9924.jpg?w=800",
+    "longitude": "-113.835204",
+    "latitude": "40.778745"
+  },
+  {
+    "title": "City Gem: San Francisco’s Sutro Baths",
+    "description": "San Francisco has been on glossy postcards for over a century.  Dreams of the Golden Gate Bridge up …",
+    "link": "https://american-alchemist.com/2018/04/14/city-gem-san-franciscos-sutro-baths/",
+    "date": "2018-04-14T14:38:53.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/04/dsc_5661.jpg?w=800",
+    "longitude": "-122.511617",
+    "latitude": "37.779858"
+  },
+  {
+    "title": "The Seven Wonders of Oregon Part IV: Mount Hood",
+    "description": "Thunderstorms are expected for the evening.  I keep my fingers crossed that the forecast will prove …",
+    "link": "https://american-alchemist.com/2018/03/17/the-seven-wonders-of-oregon-part-iv-mount-hood/",
+    "date": "2018-03-17T15:34:50.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/03/dsc_6116.jpg?w=800",
+    "longitude": "-121.695951",
+    "latitude": "45.373615"
+  },
+  {
+    "title": "Walking on the Moon (In Idaho)",
+    "description": "Jack’s Travel Plaza advertised “big burg rs” and “espres o” in skewed letters, next to a sign hockin…",
+    "link": "https://american-alchemist.com/2018/02/25/walking-on-the-moon-in-idaho/",
+    "date": "2018-02-25T17:25:52.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/02/dsc_9900.jpg?w=800",
+    "longitude": "-113.500170",
+    "latitude": "43.205807"
+  },
+  {
+    "title": "Hot Air Balloons, Energy Vortexes and Other Arizona Stories",
+    "description": "At dawn we found ourselves in Page, Arizona. Twice. Once in November heading North towards Zion Nati…",
+    "link": "https://american-alchemist.com/2018/02/10/hot-air-balloons-energy-vortexes-and-other-arizona-stories/",
+    "date": "2018-02-10T16:17:09.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/02/dsc_5112.jpg?w=800",
+    "longitude": "-111.760990",
+    "latitude": "34.869740"
+  },
+  {
+    "title": "An Illustrated Style Guide to Tokyo",
+    "description": "Scene I: Tokyo. Girl stands in front of metro turnstyle.  It’s Wednesday morning, 8:30am.  She wears…",
+    "link": "https://american-alchemist.com/2018/01/27/an-illustrated-style-guide-to-tokyo/",
+    "date": "2018-01-27T16:54:59.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2018/01/dsc_8733-3.jpg?w=800",
+    "longitude": "139.769017",
+    "latitude": "35.680400"
+  },
+  {
+    "title": "Winning the Slottery: A Journey into Utah’s Slot Canyons",
+    "description": "The alleyways of Europe have infinite charm; Japan’s Shibuya Crossing is a testament to the metropol…",
+    "link": "https://american-alchemist.com/2018/01/04/winning-the-slottery-a-journey-into-utahs-slot-canyons/",
+    "date": "2018-01-04T22:44:56.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/12/dsc_0757.jpg?w=800",
+    "longitude": "-111.374330",
+    "latitude": "36.861910"
+  },
+  {
+    "title": "Rocky Mountain High: Part II",
+    "description": "There’s a “bro-style” in Denver that will make itself known on a Friday night, juxtaposed to the cit…",
+    "link": "https://american-alchemist.com/2017/12/14/rocky-mountain-high-part-ii/",
+    "date": "2017-12-14T22:41:22.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/12/dsc_5536.jpg?w=800",
+    "longitude": "-105.683639",
+    "latitude": "40.342793"
+  },
+  {
+    "title": "Rocky Mountain High: Part I",
+    "description": "The e-book we’d been listening to on-and-off for the last two weeks on the road had finished.  After…",
+    "link": "https://american-alchemist.com/2017/12/01/rocky-mountain-high-part-i/",
+    "date": "2017-12-01T00:18:05.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/11/dsc_5420.jpg?w=800",
+    "longitude": "-105.594328",
+    "latitude": "37.791596"
+  },
+  {
+    "title": "Eclipse Chasing",
+    "description": "In the last census Jay Em Wyoming’s population went down as a whopping sixteen.  118 miles Northeast…",
+    "link": "https://american-alchemist.com/2017/10/27/eclipse-chasing/",
+    "date": "2017-10-27T19:52:25.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/10/dsc_5608.jpg?w=800",
+    "longitude": "-104.369672",
+    "latitude": "42.461355"
+  },
+  {
+    "title": "Missoula Wildfires and Glacier Grizzlies",
+    "description": "Day one of coast to coast road trips have been quite colorful for Carl and I.  In 2013 we left Pitts…",
+    "link": "https://american-alchemist.com/2017/10/22/missoula-wildfires-and-glacier-grizzlies/",
+    "date": "2017-10-22T14:36:49.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/10/dsc_4322.jpg?w=800",
+    "longitude": "-113.787023",
+    "latitude": "48.759613"
+  },
+  {
+    "title": "Capitol Reef and Traveling Off the Grid",
+    "description": "I’m trying a new thing; I’m trying to travel with no expectations. This seems like a simple concept,…",
+    "link": "https://american-alchemist.com/2017/09/28/capitol-reef-and-traveling-off-the-grid/",
+    "date": "2017-09-28T00:21:42.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/09/dsc_0135.jpg?w=800",
+    "longitude": "-111.261504",
+    "latitude": "38.366970"
+  },
+  {
+    "title": "An Ode and a Goodbye to Seattle",
+    "description": "At twenty-five, I went West.  West out of my Philadelphia comfort zone where I’d lived for eight yea…",
+    "link": "https://american-alchemist.com/2017/08/14/an-ode-and-a-goodbye-to-seattle/",
+    "date": "2017-08-14T22:41:51.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/08/dsc_4192-e1502750400235.jpg?w=800",
+    "longitude": "-122.332071",
+    "latitude": "47.606209"
+  },
+  {
+    "title": "Must Visit Breweries in the PNW",
+    "description": "The Pacific Northwest (that’s the PNW to you cool kids) is a heaven for beer-mongers.  Craft breweri…",
+    "link": "https://american-alchemist.com/2017/07/26/must-visit-breweries-in-the-pnw/",
+    "date": "2017-07-26T22:30:33.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/07/aslan.jpg?w=800",
+    "longitude": "-122.332071",
+    "latitude": "47.606209"
+  },
+  {
+    "title": "My 5 Most Beautiful Hikes in Washington",
+    "description": "Washington is stupid beautiful.  I’ve never considered myself the outdoorsy type, but in this corner…",
+    "link": "https://american-alchemist.com/2017/06/25/my-5-most-beautiful-hikes-in-washington/",
+    "date": "2017-06-25T19:54:32.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/06/dsc_6771.jpg?w=800",
+    "longitude": "-120.661477",
+    "latitude": "47.596233"
+  },
+  {
+    "title": "The Ultimate Road Trip Playlist: California Edition",
+    "description": "California:  Home to movie stars and hippies, destination for beatniks and stoners, bordered by ocea…",
+    "link": "https://american-alchemist.com/2017/05/27/the-ultimate-road-trip-playlist-california-edition/",
+    "date": "2017-05-27T22:48:37.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/05/calicassette3.jpg?w=800",
+    "longitude": "-121.808056",
+    "latitude": "36.270423"
+  },
+  {
+    "title": "A New Orleans New Year’s Countdown",
+    "description": "While our airboat is going 30 miles or so through the swamp the guy in front of me cracks open a Coo…",
+    "link": "https://american-alchemist.com/2017/04/29/a-new-orleans-new-years-countdown/",
+    "date": "2017-04-29T19:08:06.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/04/orleans10.jpg?w=800",
+    "longitude": "-90.064411",
+    "latitude": "29.958443"
+  },
+  {
+    "title": "An Illustrated Food Guide to New Orleans",
+    "description": "NOLA.  The Big Easy.  Home to Mardi Gras, jazz music and voodoo priestesses. The region has more ico…",
+    "link": "https://american-alchemist.com/2017/04/01/an-illustrated-food-guide-to-new-orleans/",
+    "date": "2017-04-01T22:55:22.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/03/finalmuffaletta.jpg?w=800",
+    "longitude": "-90.071532",
+    "latitude": "29.951066"
+  },
+  {
+    "title": "The Grit of Lisbon",
+    "description": "Twenty minutes ago we plopped our bags down in the hotel and already we’re witnessing a full-on braw…",
+    "link": "https://american-alchemist.com/2017/03/08/the-grit-of-lisbon/",
+    "date": "2017-03-08T21:39:02.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/03/dsc_2341.jpg?w=800",
+    "longitude": "-9.139337",
+    "latitude": "38.722252"
+  },
+  {
+    "title": "Seville: A Study in Pretty",
+    "description": "Back in elementary school when my life’s goal was to be a princess, I envisioned Seville to be my ki…",
+    "link": "https://american-alchemist.com/2017/02/28/seville-a-study-in-pretty/",
+    "date": "2017-02-28T21:57:57.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/02/dsc_2036.jpg?w=800",
+    "longitude": "-5.984459",
+    "latitude": "37.389092"
+  },
+  {
+    "title": "Gaudi: Architecture for those with a Netflix queue of Dark, Cerebral, Comedies",
+    "description": "His visions are equal parts dream and acid trip; covered with windows that warp reflections, crevice…",
+    "link": "https://american-alchemist.com/2017/02/03/gaudi-architecture-for-those-with-a-netflix-queue-of-dark-cerebral-comedies/",
+    "date": "2017-02-03T18:30:00.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2017/02/dsc_1194-1.jpg?w=800",
+    "longitude": "2.173404",
+    "latitude": "41.385064"
+  },
+  {
+    "title": "Going Gothic in Barcelona",
+    "description": "What’s more romantic than Barcelona’s gothic quarter?\nYou’re meant to get lost here. Beelining to yo…",
+    "link": "https://american-alchemist.com/2017/01/08/going-gothic-in-barcelona/",
+    "date": "2017-01-08T18:43:35.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/12/dsc_1019.jpg?w=800",
+    "longitude": "2.173404",
+    "latitude": "41.385064"
+  },
+  {
+    "title": "History, Anxiety and Cordoba",
+    "description": "Cordoba, like much of Spain, has a rough history.  The city spent centuries flipping back and forth …",
+    "link": "https://american-alchemist.com/2016/12/23/history-anxiety-and-cordoba/",
+    "date": "2016-12-23T20:49:11.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/12/dsc_1580.jpg?w=800",
+    "longitude": "-4.779383",
+    "latitude": "37.888175"
+  },
+  {
+    "title": "Searching for Hemingway in Madrid",
+    "description": "Ultimate expat.  Consumer of endless drinks. Haver of impressive mustaches. Hemingway embodies roman…",
+    "link": "https://american-alchemist.com/2016/11/27/searching-for-hemingway-in-madrid/",
+    "date": "2016-11-27T18:19:43.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/11/dsc_1334-1.jpg?w=800",
+    "longitude": "-3.703790",
+    "latitude": "40.416775"
+  },
+  {
+    "title": "Seven Wonders of Oregon Part III: The Oregon Coast",
+    "description": "East Coast is different than West Coast.  Food is different: The East boasts some homeborn eats like…",
+    "link": "https://american-alchemist.com/2016/09/11/seven-wonders-of-oregon-part-iii-the-oregon-coast/",
+    "date": "2016-09-11T19:21:38.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/09/dsc_9028.jpg?w=800",
+    "longitude": "-124.126499",
+    "latitude": "44.122059"
+  },
+  {
+    "title": "Making the Most of a Cancelled Flight",
+    "description": "What do you do when your flight from Hong Kong to Seattle is cancelled?  You go to Disneyland.  Obvi…",
+    "link": "https://american-alchemist.com/2016/08/21/making-the-most-of-a-cancelled-flight/",
+    "date": "2016-08-21T18:38:22.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/08/img_20150908_1648522-e1471487944963.jpg?w=800",
+    "longitude": "114.169361",
+    "latitude": "22.319304"
+  },
+  {
+    "title": "The Enchantments Wilderness",
+    "description": "Overnighting in the Enchantments requires winning the lottery.  \nFrom May to October a limited amoun…",
+    "link": "https://american-alchemist.com/2016/08/07/the-enchantments-wilderness/",
+    "date": "2016-08-07T19:20:32.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/07/dsc_0287.jpg?w=800",
+    "longitude": "-120.819244",
+    "latitude": "47.478540"
+  },
+  {
+    "title": "How To Be a Tourist in Your Own City",
+    "description": "Traveling, even the tiniest bit, causes your body to crave it.  Once you return from abroad or just …",
+    "link": "https://american-alchemist.com/2016/07/10/how-to-be-a-tourist-in-your-own-city/",
+    "date": "2016-07-10T19:05:49.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/07/dsc_5965.jpg?w=800",
+    "longitude": "-122.332071",
+    "latitude": "47.606209"
+  },
+  {
+    "title": "The Five Constantly Dissatisfied People You Meet on TripAdvisor",
+    "description": "One of my favorite things to do after a long day traveling is look up bad reviews of popular attract…",
+    "link": "https://american-alchemist.com/2016/06/14/the-five-constantly-dissatisfied-people-you-meet-on-tripadvisor/",
+    "date": "2016-06-14T20:51:13.000Z",
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/06/dsc_1214.jpg?w=800",
+    "longitude": "-112.112997",
+    "latitude": "36.106965"
+  },
+  {
     "title": "Mount Koya and the Monk Graveyard",
     "description": "We spent most of our time in the cemetery.  Early morning with wet moss glistening green, watching s…",
     "link": "https://american-alchemist.com/2016/06/03/mount-koya-and-the-monk-graveyard/",
     "date": "2016-06-03T17:32:29.000Z",
-    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/05/img_25951.jpg?w=400",
-    "latitude": "34.2167",
-    "longitude": "135.5833"
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/05/img_25951.jpg?w=800",
+    "longitude": "135.572497",
+    "latitude": "34.220393"
   },
   {
     "title": "LA’s Bradbury: The Place You Know but Cannot Name",
     "description": "We have an old school Ouija board to thank for the Bradbury Building.  \nA century ago an architectur…",
     "link": "https://american-alchemist.com/2016/05/18/las-bradbury-the-building-you-know-but-cannot-name/",
     "date": "2016-05-18T21:19:53.000Z",
-    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/05/dsc_9443.jpg?w=400",
-    "latitude": "34.0505",
-    "longitude": "-118.2478"
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/05/dsc_9443.jpg?w=800",
+    "longitude": "-118.243685",
+    "latitude": "34.052234"
   },
   {
     "title": "The Affectations and Allure of LA",
     "description": "Two women clasp their fingers through the rungs of a chain link fence.  They’re all but salivating i…",
     "link": "https://american-alchemist.com/2016/05/01/the-affectations-and-allure-of-la/",
     "date": "2016-05-01T15:35:51.000Z",
-    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/04/img_3955.jpg?w=400",
-    "latitude": "34.0522",
-    "longitude": " -118.2437"
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/04/img_3955.jpg?w=800",
+    "longitude": "-118.243685",
+    "latitude": "34.052234"
   },
   {
     "title": "Yosemite’s Playlist",
     "description": "Fastball’s voice assured me that Anyone can see the road that they walk on is paved in gold as we sn…",
     "link": "https://american-alchemist.com/2016/03/06/yosemites-playlist/",
     "date": "2016-03-06T20:05:31.000Z",
-    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/03/img_3794.jpg?w=400",
-    "latitude": "37.8651",
-    "longitude": "-119.5383"
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/03/img_3794.jpg?w=800",
+    "longitude": "-119.538329",
+    "latitude": "37.865101"
   },
   {
     "title": "Keepin’ Portland Weird",
     "description": "It’s 90 degrees out, but the man next to us on the bus is draped in chainmail from head to knee, and…",
     "link": "https://american-alchemist.com/2016/02/16/keepin-portland-weird/",
     "date": "2016-02-16T22:25:00.000Z",
-    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3338.jpg?w=400",
-    "latitude": "45.5231",
-    "longitude": "-122.6765"
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3338.jpg?w=800",
+    "longitude": "-122.675026",
+    "latitude": "45.505106"
   },
   {
     "title": "An Illustrated Food Guide to Japan",
     "description": "Travel opens up the world for us, introducing us to new cultures, and allowing us to marvel at the m…",
     "link": "https://american-alchemist.com/2016/01/20/an-illustrated-food-guide-to-japan/",
     "date": "2016-01-20T21:16:46.000Z",
-    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/01/dsc_88301.jpg?w=400",
-    "latitude": "36.2048",
-    "longitude": "138.2529"
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/01/dsc_88301.jpg?w=800",
+    "longitude": "139.769017",
+    "latitude": "35.680400"
   },
   {
     "title": "Sake Tasting in Takayama",
     "description": "Our Hawaiian t-shirted tour guide Orito is filling us in on the region.  He’s had this job since com…",
     "link": "https://american-alchemist.com/2016/01/03/sake-tasting-in-takayama/",
     "date": "2016-01-03T17:19:08.000Z",
-    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/01/dsc_8326.jpg?w=400",
-    "latitude": "36.1461",
-    "longitude": "137.2522"
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2016/01/dsc_8326.jpg?w=800",
+    "longitude": "137.252159",
+    "latitude": "36.146132"
   },
   {
     "title": "A Tour through Tokyo Via Haiku: Shibuya and Shinjuku",
     "description": "SHIBUYA\nZebra stripes and the night\nPlay hopscotch in a crowd,\nEndlessly till dawn.\nAccording  to Tr…",
-    "link": "http://american-alchemist.com/2015/12/06/a-tour-through-tokyo-via-haiku-shibuya-and-shinjuku/",
+    "link": "https://american-alchemist.com/2015/12/06/a-tour-through-tokyo-via-haiku-shibuya-and-shinjuku/",
     "date": "2015-12-06T20:06:26.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_8396.jpg?w=400",
-    "latitude": 35.6640,
-    "longitude": 139.6982
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_8396.jpg?w=800",
+    "longitude": "139.769017",
+    "latitude": "35.680400"
   },
   {
     "title": "A Tour through Tokyo Via Haiku: Shimokitazawa, Ginza, and Harajuku",
     "description": "SHIMOKITAZAWA\nCool kid on the block\nStanding in vintage high tops,\nEspresso in hand.\nWe arrived in S…",
-    "link": "http://american-alchemist.com/2015/11/27/a-tour-through-tokyo-via-haiku-shimokitazawa-ginza-and-harajuku/",
+    "link": "https://american-alchemist.com/2015/11/27/a-tour-through-tokyo-via-haiku-shimokitazawa-ginza-and-harajuku/",
     "date": "2015-11-27T19:54:19.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/img_36051.jpg?w=400",
-    "latitude": 35.661606,
-    "longitude": 139.666561
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/11/img_36051.jpg?w=800",
+    "longitude": "139.709008",
+    "latitude": "35.669968"
   },
   {
     "title": "A Tour Through Tokyo Via Haiku: The Metro, The Fish Market, and the Gardens",
     "description": "TOKYO METRO\nA polite hussle\nMoving in silent masses\nTrain calls cut the air.\nThere’s a weekday unifo…",
-    "link": "http://american-alchemist.com/2015/11/23/a-tour-through-tokyo-via-haiku-the-metro-the-fish-market-and-the-gardens-2/",
+    "link": "https://american-alchemist.com/2015/11/23/a-tour-through-tokyo-via-haiku-the-metro-the-fish-market-and-the-gardens-2/",
     "date": "2015-11-23T22:34:46.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_7635.jpg?w=400",
-    "latitude": 35.661389,
-    "longitude": 139.769722
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/11/dsc_7635.jpg?w=800",
+    "longitude": "139.769017",
+    "latitude": "35.680400"
   },
   {
     "title": "An Afternoon Abroad with a Poor Choice of Footware",
     "description": "Bubblegum is holding my shoe together.  The black perforated flats I packed have proven to be a bad …",
-    "link": "http://american-alchemist.com/2015/10/20/an-afternoon-abroad-with-a-poor-choice-of-footware/",
+    "link": "https://american-alchemist.com/2015/10/20/an-afternoon-abroad-with-a-poor-choice-of-footware/",
     "date": "2015-10-20T20:35:21.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/10/dsc_7922.jpg?w=400",
-    "latitude": 35.011667,
-    "longitude": 135.768333
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/10/dsc_7922.jpg?w=800",
+    "longitude": "135.768149",
+    "latitude": "35.011564"
   },
   {
     "title": "The Old Heart of San Francisco",
     "description": "The fog in San Francisco is named Karl.  Karl has his own Twitter account and LinkedIn profile.  He’…",
-    "link": "http://american-alchemist.com/2015/08/19/the-old-heart-of-san-francisco/",
+    "link": "https://american-alchemist.com/2015/08/19/the-old-heart-of-san-francisco/",
     "date": "2015-08-19T04:59:49.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/img_1815.jpg?w=400",
-    "latitude": 37.783333,
-    "longitude": -122.416667
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/07/img_1815.jpg?w=800",
+    "longitude": "-122.419415",
+    "latitude": "37.774929"
   },
   {
     "title": "Block Party in Seattle",
     "description": "Petrichor is a word constructed from the Greek “petra”, meaning stone, and “ichor”, the fluid that f…",
-    "link": "http://american-alchemist.com/2015/07/26/block-party-in-seattle/",
+    "link": "https://american-alchemist.com/2015/07/26/block-party-in-seattle/",
     "date": "2015-07-26T20:11:22.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_6724.jpg?w=400",
-    "latitude": 47.622942,
-    "longitude": -122.316456
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_6724.jpg?w=800",
+    "longitude": "-122.322183",
+    "latitude": "47.625305"
   },
   {
     "title": "Seven Wonders of Oregon Part II: The Columbia River Gorge",
     "description": "Think of a town living in the hall of a mountain king.  Where in it’s shadow people spend their days…",
-    "link": "http://american-alchemist.com/2015/07/16/seven-wonders-of-oregon-part-ii-the-columbia-river-gorge/",
+    "link": "https://american-alchemist.com/2015/07/16/seven-wonders-of-oregon-part-ii-the-columbia-river-gorge/",
     "date": "2015-07-16T16:21:36.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_5972.jpg?w=400",
-    "latitude": 45.704722,
-    "longitude": -121.791667
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/07/dsc_5972.jpg?w=800",
+    "longitude": "-121.519633",
+    "latitude": "45.711564"
   },
   {
     "title": "Honky-Tonk Town in Nashville",
     "description": "Honky Tonks are the main attraction.  Men play cellos as they trill their tongue to twanging strings…",
-    "link": "http://american-alchemist.com/2015/07/01/honky-tonk-town-in-nashville/",
+    "link": "https://american-alchemist.com/2015/07/01/honky-tonk-town-in-nashville/",
     "date": "2015-07-01T16:54:26.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4307.jpg?w=400",
-    "latitude": 36.166667,
-    "longitude": -86.783333
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4307.jpg?w=800",
+    "longitude": "-86.781602",
+    "latitude": "36.162664"
   },
   {
     "title": "National Monument: Bandelier",
     "description": "A grandmotherly woman in the ranger station traced routes on our maps with a red pen, writing in sma…",
-    "link": "http://american-alchemist.com/2015/05/31/national-monument-bandelier/",
+    "link": "https://american-alchemist.com/2015/05/31/national-monument-bandelier/",
     "date": "2015-05-31T21:20:29.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/05/bandelier-circle.jpg?w=400",
-    "latitude": 35.778889,
-    "longitude": -106.321111
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/05/bandelier-circle.jpg?w=800",
+    "longitude": "-106.269608",
+    "latitude": "35.778175"
   },
   {
     "title": "Roadtrippin’ in California",
     "description": "Driving to California has been a dream of mine since the tween years.  After graduation my friends a…",
-    "link": "http://american-alchemist.com/2015/05/17/roadtrippin-in-california/",
+    "link": "https://american-alchemist.com/2015/05/17/roadtrippin-in-california/",
     "date": "2015-05-17T20:20:49.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/05/dsc_5375-e1432417201465.jpg?w=400",
-    "latitude": 37,
-    "longitude": -120
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/05/dsc_5375-e1432417201465.jpg?w=800",
+    "longitude": "-119.417932",
+    "latitude": "36.778261"
   },
   {
     "title": "Tango In Buenos Aires",
     "description": "Lightning blazes in windows but no one looks.  No one even speaks.  Tables across the room are cover…",
-    "link": "http://american-alchemist.com/2015/04/25/tango-in-buenos-aires/",
+    "link": "https://american-alchemist.com/2015/04/25/tango-in-buenos-aires/",
     "date": "2015-04-25T21:14:21.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3513-e1432417888217.jpg?w=400",
-    "latitude": -34.603333,
-    "longitude": -58.381667
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3513-e1432417888217.jpg?w=800",
+    "longitude": "-58.421247",
+    "latitude": "-34.604902"
   },
   {
     "title": "A Non-Definitive Guide to NYC",
     "description": "Landmarks give shape to a city but they don’t define it.  The Eiffel Tower.  The Colosseum.  Big Ben…",
-    "link": "http://american-alchemist.com/2015/03/16/a-non-definitive-guide-to-nyc/",
+    "link": "https://american-alchemist.com/2015/03/16/a-non-definitive-guide-to-nyc/",
     "date": "2015-03-16T00:15:37.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3461-e1432418025773.jpg?w=400",
-    "latitude": 40.7127,
-    "longitude": -74.0059
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2015/03/dsc_3554-e1432419071625.jpg?w=800",
+    "longitude": "-74.002742",
+    "latitude": "40.733572"
   },
   {
     "title": "Seven Wonders of Oregon: The Painted Hills",
     "description": "Turquoise tulle rises and falls, rises and falls, a confection in motion and a dream among the hills…",
-    "link": "http://american-alchemist.com/2015/01/13/seven-wonders-of-oregon-the-painted-hills/",
+    "link": "https://american-alchemist.com/2015/01/13/seven-wonders-of-oregon-the-painted-hills/",
     "date": "2015-01-13T21:27:23.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_8603-e1432419234648.jpg?w=400",
-    "latitude": 44.661522,
-    "longitude": -120.273073
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_8603-e1432419234648.jpg?w=800",
+    "longitude": "-120.273073",
+    "latitude": "44.661522"
   },
   {
     "title": "National Park: Mount Rainier",
     "description": "Malcolm Middleton is singing about a box and a knife in arguably one of the most depressing songs I’…",
-    "link": "http://american-alchemist.com/2015/01/02/national-park-mount-rainier/",
+    "link": "https://american-alchemist.com/2015/01/02/national-park-mount-rainier/",
     "date": "2015-01-02T18:20:09.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_9748.jpg?w=400",
-    "latitude": 46.85,
-    "longitude": -121.75
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_9748.jpg?w=800",
+    "longitude": "-121.758950",
+    "latitude": "46.853704"
   },
   {
     "title": "Pit Stop: Cadillac Ranch",
     "description": "Most just shout names.  Ben, Donna, Jake.  Shirley Sux says another.  FMHS Class of 1977, Laredo, Mo…",
-    "link": "http://american-alchemist.com/2014/12/06/pit-stop-cadillac-ranch/",
+    "link": "https://american-alchemist.com/2014/12/06/pit-stop-cadillac-ranch/",
     "date": "2014-12-06T02:06:21.000Z",
-    "image": "http://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4442-e1432419216757.jpg?w=400",
-    "latitude": 35.187221,
-    "longitude": -101.987041
+    "image": "https://americanalchemistdotcom.files.wordpress.com/2014/12/dsc_4442-e1432419216757.jpg?w=800",
+    "longitude": "-101.987096",
+    "latitude": "35.187223"
   }
 ]
-
