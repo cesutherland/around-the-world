@@ -18,7 +18,7 @@
     "feedparser": "^1.1.4",
     "jquery": "^2.1.4",
     "leaflet": "^0.7.7",
-    "sanitize-html": "^1.11.2",
+    "sanitize-html": "^2.3.2",
     "truncate": "^2.0.0"
   },
   "devDependencies": {
