@@ -22,6 +22,6 @@
     "truncate": "^2.0.0"
   },
   "devDependencies": {
-    "gib": "0.0.4"
+    "gib": "1.0.6"
   }
 }
